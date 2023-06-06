@@ -36,7 +36,7 @@ def ticker(portfile, logfile, fmt):
 
 def main(args):
     if len(args) != 4:
-        raise SystemExit('Usage: %s portfoliofile logfile fmt' % args[0])
+        raise SystemExit(f'Usage: {args[0]} portfoliofile logfile fmt')
     ticker(args[1], args[2], args[3])
 
 if __name__ == '__main__':

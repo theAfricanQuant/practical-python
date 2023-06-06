@@ -1,8 +1,6 @@
 # bounce.py
 
 height = 100
-bounce = 1
-while bounce <= 10:
+for bounce in range(1, 11):
     height = height * (3/5)
     print(bounce, round(height, 4))
-    bounce += 1

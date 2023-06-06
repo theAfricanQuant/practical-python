@@ -11,7 +11,7 @@ def portfolio_cost(filename):
 
 def main(args):
     if len(args) != 2:
-        raise SystemExit('Usage: %s portfoliofile' % args[0])
+        raise SystemExit(f'Usage: {args[0]} portfoliofile')
     filename = args[1]
     print('Total cost:', portfolio_cost(filename))
 

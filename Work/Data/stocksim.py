@@ -49,8 +49,7 @@ def read_history(filename):
 
 # Format CSV record
 def csv_record(fields):
-    s = '"%s",%0.2f,"%s","%s",%0.2f,%0.2f,%0.2f,%0.2f,%d' % tuple(fields)
-    return s
+    return '"%s",%0.2f,"%s","%s",%0.2f,%0.2f,%0.2f,%0.2f,%d' % tuple(fields)
 
 class StockTrack(object):
     def __init__(self,name):

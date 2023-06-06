@@ -7,7 +7,7 @@ def parse_csv(lines, select=None, types=None, has_headers=True, delimiter=',', s
     '''
     Parse a CSV file into a list of records with type conversion.
     '''
-    assert not (select and not has_headers), 'select requires column headers'
+    assert not select or has_headers, 'select requires column headers'
     rows = csv.reader(lines, delimiter=delimiter)
 
     # Read the file headers (if any)
@@ -38,10 +38,7 @@ def parse_csv(lines, select=None, types=None, has_headers=True, delimiter=',', s
                 continue
 
         # Make a dictionary or a tuple
-        if headers:
-            record = dict(zip(headers, row))
-        else:
-            record = tuple(row)
+        record = dict(zip(headers, row)) if headers else tuple(row)
         records.append(record)
 
     return records

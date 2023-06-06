@@ -13,8 +13,7 @@ def read_portfolio(filename):
                                         select=['name','shares','price'], 
                                         types=[str,int,float])
 
-    portfolio = [ Stock(d['name'], d['shares'], d['price']) for d in portdicts ]
-    return portfolio
+    return [ Stock(d['name'], d['shares'], d['price']) for d in portdicts ]
 
 def read_prices(filename):
     '''
@@ -62,7 +61,7 @@ def portfolio_report(portfoliofile, pricefile):
 
 def main(args):
     if len(args) != 3:
-        raise SystemExit('Usage: %s portfile pricefile' % args[0])
+        raise SystemExit(f'Usage: {args[0]} portfile pricefile')
     portfolio_report(args[1], args[2])
 
 if __name__ == '__main__':

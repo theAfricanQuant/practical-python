@@ -1,7 +1,7 @@
 # typedproperty.py
 
 def typedproperty(name, expected_type):
-    private_name = '_' + name
+    private_name = f'_{name}'
     @property
     def prop(self):
         return getattr(self, private_name)
